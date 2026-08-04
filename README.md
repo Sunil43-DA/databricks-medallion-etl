@@ -1,14 +1,22 @@
-# Databricks Medallion ETL Pipeline using PySpark
+# 🚀 Databricks Medallion ETL Pipeline using PySpark
 
-## Project Overview
+![Architecture](images/Architecture_Databricks.png)
+
+## 📖 Project Overview
 
 This project demonstrates an end-to-end ETL pipeline built using **Databricks Community Edition** and **PySpark**, following the **Medallion Architecture (Bronze → Silver → Gold)**.
 
-The pipeline ingests raw CSV data, transforms it into Parquet format, performs data cleansing and enrichment, and produces business-ready aggregated datasets for analytics.
+The pipeline ingests raw CSV data, transforms it into Parquet, enriches the data, and produces business-ready aggregated datasets.
 
 ---
 
-## Technologies Used
+## 🏗️ Architecture
+
+![Architecture](images/Architecture_Databricks.png)
+
+---
+
+## 🛠️ Technologies
 
 - Databricks Community Edition
 - Apache Spark
@@ -20,96 +28,79 @@ The pipeline ingests raw CSV data, transforms it into Parquet format, performs d
 
 ---
 
-## Medallion Architecture
+## 📂 Project Structure
 
+```text
+databricks-medallion-etl/
+├── notebooks/
+├── data/
+├── images/
+├── docs/
+├── README.md
+└── .gitignore
 ```
+
+---
+
+## 🔄 ETL Workflow
+
 CSV File
-     │
-     ▼
- Bronze Layer
- (Raw CSV → Parquet)
-     │
-     ▼
- Silver Layer
- (Data Cleaning + Transformation)
-     │
-     ▼
- Gold Layer
- (Business Aggregations)
-```
+
+↓
+
+Bronze Layer (Raw Parquet)
+
+↓
+
+Silver Layer (Cleaned + Enriched)
+
+↓
+
+Gold Layer (Business Aggregations)
 
 ---
 
 ## Bronze Layer
 
 - Read CSV
-- Infer schema
-- Preserve raw data
-- Write as Parquet
+- Infer Schema
+- Store Raw Data as Parquet
 
 ---
 
 ## Silver Layer
 
 - Standardize column names
-- Create derived column
-
-```
-total_price = quantity × price
-```
-
-- Filter records
-
-```
-total_price > 1000
-```
-
-- Store cleaned Parquet data
+- Create `total_price`
+- Filter records (`total_price > 1000`)
 
 ---
 
 ## Gold Layer
-
-Business aggregations:
 
 - Total Sales by Region
 - Order Count by Region
 
 ---
 
-## PySpark Operations Used
+## 📊 Sample Outputs
 
-- spark.read()
-- select()
-- withColumn()
-- withColumnRenamed()
-- filter()
-- groupBy()
-- agg()
-- write.mode("overwrite")
+### Bronze
 
----
+![Bronze](images/bronze.png)
 
-## Output
+### Silver
 
-The project creates three layers:
+![Silver](images/silver.png)
 
-```
-bronze/
-silver/
-gold/
-```
+### Gold
 
-containing Parquet datasets for analytics.
+![Gold](images/gold.png)
 
 ---
 
-## Author
+## 👨‍💻 Author
 
-**Sunil Reddy**
+**Sunil Narayanareddy**
 
-LinkedIn:
-https://www.linkedin.com/in/sunil-reddy-35aa203ab
-
-GitHub:
-https://github.com/Sunil43-DA
+GitHub: https://github.com/Sunil43-DA
