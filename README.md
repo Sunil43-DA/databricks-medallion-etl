@@ -109,7 +109,7 @@ containing Parquet datasets for analytics.
 **Sunil Reddy**
 
 LinkedIn:
-(Add your LinkedIn URL)
+https://www.linkedin.com/in/sunil-reddy-35aa203ab
 
 GitHub:
 https://github.com/Sunil43-DA
